@@ -19,7 +19,10 @@ function test_io (){
     export FIO_DIR="/rpool$ashift/test"
 
     mkdir "$TEST_NAME" && cd "$TEST_NAME";
+    # Generate data
     fio ../fio-ashift-eval.ini
+    # generate some plots
+    fio_generate_plots "$TEST_NAME logs"
     cd ..
 }
 
