@@ -18,7 +18,9 @@ function test_io (){
     export TEST_NAME="ashift$ashift"
     export FIO_DIR="/rpool$ashift/test"
 
-    fio fio-ashift-eval.ini
+    mkdir "$TEST_NAME" && cd "$TEST_NAME";
+    fio ../fio-ashift-eval.ini
+    cd ..
 }
 
 # Test for ashift9
